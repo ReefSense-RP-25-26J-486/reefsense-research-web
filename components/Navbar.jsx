@@ -53,21 +53,13 @@ export default function Navbar() {
         <a
           href="#"
           onClick={(e) => handleNavClick(e, '#')}
-          className="flex items-center gap-2.5"
+          className="flex items-center"
         >
-          <span
-            className="w-2 h-2 rounded-full flex-shrink-0"
-            style={{
-              background: '#00d4b4',
-              boxShadow: '0 0 8px rgba(0, 212, 180, 0.7)',
-            }}
+          <img
+            src="/images/logos/ReefSense wide Logo.png"
+            alt="ReefSense"
+            style={{ height: '32px', width: 'auto', objectFit: 'contain' }}
           />
-          <span
-            className="font-display font-bold tracking-tight"
-            style={{ color: '#e8f4f8', fontSize: '1rem', letterSpacing: '-0.01em' }}
-          >
-            REEFSENSE
-          </span>
         </a>
 
         {/* Desktop nav */}

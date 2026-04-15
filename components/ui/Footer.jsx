@@ -19,17 +19,12 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-8">
           {/* Left — branding */}
           <div>
-            <div className="flex items-center gap-2 mb-3">
-              <span
-                className="w-2 h-2 rounded-full"
-                style={{ background: '#00d4b4', boxShadow: '0 0 6px rgba(0,212,180,0.6)' }}
+            <div className="mb-3">
+              <img
+                src="/images/logos/ReefSense_text_only.png"
+                alt="ReefSense"
+                style={{ height: '24px', width: 'auto', objectFit: 'contain' }}
               />
-              <span
-                className="font-display font-bold tracking-tight"
-                style={{ color: '#e8f4f8', fontSize: '1rem' }}
-              >
-                REEFSENSE
-              </span>
             </div>
             <p
               className="font-mono"
