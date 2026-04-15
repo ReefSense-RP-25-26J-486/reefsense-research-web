@@ -8,7 +8,7 @@ export default function About() {
         <SectionHeading
           label={about.sectionLabel}
           title="About the Research"
-          subtitle="Understanding the problem and our approach to solving it."
+          // subtitle="Understanding the problem and our approach to solving it."
         />
 
         <div className="grid md:grid-cols-2 gap-12 lg:gap-24">

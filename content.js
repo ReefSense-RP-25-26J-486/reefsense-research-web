@@ -249,36 +249,36 @@ export const team = [
   // ── Supervisors ──────────────────────────────
   {
     name: 'Ms. Thilini Jayalath',
-    role: 'Supervisor',
     supervisorTitle: 'Supervisor',
-    bio: 'Lecturer at SLIIT Faculty of Computing. Primary supervisor for the ReefSense research project.',
+    position: 'Senior Lecturer',                    // update if needed
+    organization: 'SLIIT, Faculty of Computing',
     photo: '/images/members/Thilini Jayalath.png',
     linkedin: '#',
     isSupervisor: true,
   },
   {
     name: 'Ms. Hansi De Silva',
-    role: 'Co-Supervisor',
     supervisorTitle: 'Co-Supervisor',
-    bio: 'Lecturer at SLIIT Faculty of Computing. Co-supervisor providing guidance on system design and research methodology.',
+    position: 'Lecturer',                           // update if needed
+    organization: 'SLIIT, Faculty of Computing',
     photo: '/images/members/Hansi De Silva.png',
     linkedin: '#',
     isSupervisor: true,
   },
   {
     name: 'Mr. Samitha Vidhanaarachchi',
-    role: 'External Supervisor',
     supervisorTitle: 'External Supervisor',
-    bio: 'External supervisor contributing domain expertise in AI and decision support systems.',
+    position: 'External Supervisor',               // update with actual position
+    organization: 'Coral Wall Diving & Research Centre',
     photo: '/images/members/Samitha.png',
     linkedin: '#',
     isSupervisor: true,
   },
   {
     name: 'Admiral Piyal De Silva',
-    role: 'External Supervisor',
     supervisorTitle: 'External Supervisor',
-    bio: 'External supervisor providing strategic guidance on marine conservation and naval expertise.',
+    position: 'Admiral',                            // update if needed
+    organization: 'Sri Lanka Navy',                 // update if needed
     photo: '/images/members/Piyal de Silva.png',
     linkedin: '#',
     isSupervisor: true,
@@ -289,38 +289,36 @@ export const team = [
     name: 'Senith Udara',
     studentId: 'IT22104830',
     role: 'GIS-Based Spatial Decision Modeling',
-    bio: 'Fourth-year undergraduate at SLIIT. Responsible for GIS-based nursery site selection using AHP multi-criteria analysis. President, MS Club of SLIIT.',
     photo: '/images/members/Senith.png',
     linkedin: 'https://www.linkedin.com/in/senith-udara/',
+    email: '',                                      // add email address
     isSupervisor: false,
   },
   {
     name: 'Dinithi Wickramaarachchi',
     studentId: 'IT22227904',
     role: 'Coral Species Classification & Growth Quantification',
-    bio: 'Fourth-year undergraduate at SLIIT. Responsible for coral species classification and growth quantification using YOLO11 and deep learning techniques.',
     photo: '/images/members/Dinithi.png',
-    linkedin: 'https://www.linkedin.com/in/senith-udara/',
+    linkedin: '#',
+    email: '',                                      // add email address
     isSupervisor: false,
   },
   {
     name: 'Sahan Kavishka',
     studentId: 'IT22233530',
     role: 'Coral Bleaching Detection',
-    bio: 'Fourth-year undergraduate at SLIIT. Responsible for developing the coral bleaching detection pipeline using color-space analysis and computer vision.',
     photo: '/images/members/Sahan.png',
     linkedin: 'https://www.linkedin.com/in/sahan-kavishka-62652a288/',
+    email: '',                                      // add email address
     isSupervisor: false,
   },
   {
     name: 'Gimhani Navodya',
     studentId: 'IT22208712',
     role: 'Thermal Stress Forecasting',
-    bio: 'Fourth-year undergraduate at SLIIT. Responsible for building the CNN-LSTM thermal stress forecasting model using satellite-derived SST data.',
     photo: '/images/members/Gimhani.png',
     linkedin: 'https://www.linkedin.com/in/gimhaninavodya/',
-        email: 'https://www.linkedin.com/in/gimhaninavodya/',
-
+    email: '',                                      // add email address
     isSupervisor: false,
   },
 ]

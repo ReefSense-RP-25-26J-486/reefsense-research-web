@@ -1,8 +1,43 @@
 'use client'
 
-import { Link } from 'lucide-react'
+import { Link, Mail } from 'lucide-react'
 import SectionHeading from '@/components/ui/SectionHeading'
 import { team, teamSection } from '@/content'
+
+function Photo({ src, name }) {
+  return (
+    <div
+      className="w-full mb-4 overflow-hidden"
+      style={{
+        aspectRatio: '1/1',
+        background: '#050d1a',
+        border: '1px solid rgba(0, 212, 180, 0.1)',
+        borderRadius: '4px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
+      {src ? (
+        <img
+          src={src}
+          alt={name}
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            objectPosition: 'top',
+            display: 'block',
+          }}
+        />
+      ) : (
+        <p className="font-mono text-center px-3" style={{ color: '#2a4a5a', fontSize: '10px' }}>
+          Photo unavailable
+        </p>
+      )}
+    </div>
+  )
+}
 
 function SupervisorCard({ member }) {
   return (
@@ -29,68 +64,46 @@ function SupervisorCard({ member }) {
         {member.supervisorTitle.toUpperCase()}
       </span>
 
-      {/* Photo */}
-      <div
-        className="w-full mb-4 overflow-hidden"
-        style={{
-          aspectRatio: '1/1',
-          background: '#050d1a',
-          border: '1px solid rgba(0, 212, 180, 0.1)',
-          borderRadius: '4px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-      >
-        {member.photo ? (
-          <img
-            src={member.photo}
-            alt={member.name}
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              objectPosition: 'top',
-              display: 'block',
-            }}
-          />
-        ) : (
-          <p
-            className="font-mono text-center px-3"
-            style={{ color: '#2a4a5a', fontSize: '10px' }}
-          >
-            Photo unavailable
-          </p>
-        )}
-      </div>
+      <Photo src={member.photo} name={member.name} />
 
       <h3
-        className="font-display font-semibold mb-0.5"
+        className="font-display font-semibold mb-2"
         style={{ color: '#e8f4f8', fontSize: '0.95rem' }}
       >
         {member.name}
       </h3>
+
+      {/* Position & organisation */}
       <p
-        className="font-sans flex-1 mb-4 mt-2"
-        style={{ color: '#7a9db8', fontSize: '0.8rem', lineHeight: 1.7, fontWeight: 300 }}
+        className="font-sans mb-0.5"
+        style={{ color: '#e8f4f8', fontSize: '0.78rem', fontWeight: 400 }}
       >
-        {member.bio}
+        {member.position}
+      </p>
+      <p
+        className="font-sans flex-1 mb-4"
+        style={{ color: '#7a9db8', fontSize: '0.78rem', fontWeight: 300 }}
+      >
+        {member.organization}
       </p>
 
-      {member.linkedin && member.linkedin !== '#' && (
-        <a
-          href={member.linkedin}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 transition-colors"
-          style={{ color: '#2a4a5a', fontSize: '12px' }}
-          onMouseOver={(e) => (e.currentTarget.style.color = '#00d4b4')}
-          onMouseOut={(e) => (e.currentTarget.style.color = '#2a4a5a')}
-        >
-          <Link size={12} />
-          LinkedIn
-        </a>
-      )}
+      {/* Links */}
+      <div className="flex gap-4">
+        {member.linkedin && member.linkedin !== '#' && (
+          <a
+            href={member.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 transition-colors"
+            style={{ color: '#2a4a5a', fontSize: '12px' }}
+            onMouseOver={(e) => (e.currentTarget.style.color = '#00d4b4')}
+            onMouseOut={(e) => (e.currentTarget.style.color = '#2a4a5a')}
+          >
+            <Link size={12} />
+            LinkedIn
+          </a>
+        )}
+      </div>
     </div>
   )
 }
@@ -105,40 +118,7 @@ function MemberCard({ member }) {
         borderRadius: '6px',
       }}
     >
-      {/* Photo */}
-      <div
-        className="w-full mb-4 overflow-hidden"
-        style={{
-          aspectRatio: '1/1',
-          background: '#050d1a',
-          border: '1px solid rgba(0, 212, 180, 0.1)',
-          borderRadius: '4px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-      >
-        {member.photo ? (
-          <img
-            src={member.photo}
-            alt={member.name}
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              objectPosition: 'top',
-              display: 'block',
-            }}
-          />
-        ) : (
-          <p
-            className="font-mono text-center px-3"
-            style={{ color: '#2a4a5a', fontSize: '10px' }}
-          >
-            Photo unavailable
-          </p>
-        )}
-      </div>
+      <Photo src={member.photo} name={member.name} />
 
       <h3
         className="font-display font-semibold mb-0.5"
@@ -157,33 +137,41 @@ function MemberCard({ member }) {
       )}
 
       <p
-        className="font-mono mb-3"
+        className="font-mono flex-1 mb-4"
         style={{ color: '#00d4b4', fontSize: '10px', lineHeight: 1.6 }}
       >
         {member.role}
       </p>
 
-      <p
-        className="font-sans flex-1 mb-4 line-clamp-3"
-        style={{ color: '#7a9db8', fontSize: '0.8rem', lineHeight: 1.7, fontWeight: 300 }}
-      >
-        {member.bio}
-      </p>
-
-      {member.linkedin && member.linkedin !== '#' && (
-        <a
-          href={member.linkedin}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 transition-colors"
-          style={{ color: '#2a4a5a', fontSize: '12px' }}
-          onMouseOver={(e) => (e.currentTarget.style.color = '#00d4b4')}
-          onMouseOut={(e) => (e.currentTarget.style.color = '#2a4a5a')}
-        >
-          <Link size={12} />
-          LinkedIn
-        </a>
-      )}
+      {/* Links */}
+      <div className="flex gap-4">
+        {member.linkedin && member.linkedin !== '#' && (
+          <a
+            href={member.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 transition-colors"
+            style={{ color: '#2a4a5a', fontSize: '12px' }}
+            onMouseOver={(e) => (e.currentTarget.style.color = '#00d4b4')}
+            onMouseOut={(e) => (e.currentTarget.style.color = '#2a4a5a')}
+          >
+            <Link size={12} />
+            LinkedIn
+          </a>
+        )}
+        {member.email && (
+          <a
+            href={`mailto:${member.email}`}
+            className="inline-flex items-center gap-1.5 transition-colors"
+            style={{ color: '#2a4a5a', fontSize: '12px' }}
+            onMouseOver={(e) => (e.currentTarget.style.color = '#00d4b4')}
+            onMouseOut={(e) => (e.currentTarget.style.color = '#2a4a5a')}
+          >
+            <Mail size={12} />
+            Email
+          </a>
+        )}
+      </div>
     </div>
   )
 }
