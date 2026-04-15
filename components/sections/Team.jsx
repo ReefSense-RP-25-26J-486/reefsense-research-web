@@ -80,12 +80,28 @@ function SupervisorCard({ member }) {
       >
         {member.position}
       </p>
-      <p
-        className="font-sans flex-1 mb-4"
-        style={{ color: '#7a9db8', fontSize: '0.78rem', fontWeight: 300 }}
-      >
-        {member.organization}
-      </p>
+      <div className="flex items-center gap-2 flex-1 mb-4">
+        {member.orgLogo && (
+          <img
+            src={member.orgLogo}
+            alt={member.organization}
+            style={{
+              height: '18px',
+              width: 'auto',
+              objectFit: 'contain',
+              flexShrink: 0,
+              opacity: 0.75,
+              filter: 'brightness(0) invert(1)',
+            }}
+          />
+        )}
+        <p
+          className="font-sans"
+          style={{ color: '#7a9db8', fontSize: '0.78rem', fontWeight: 300 }}
+        >
+          {member.organization}
+        </p>
+      </div>
 
       {/* Links */}
       <div className="flex gap-4">

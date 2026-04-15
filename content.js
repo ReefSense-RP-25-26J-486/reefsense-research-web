@@ -250,8 +250,9 @@ export const team = [
   {
     name: 'Ms. Thilini Jayalath',
     supervisorTitle: 'Supervisor',
-    position: 'Senior Lecturer',                    // update if needed
+    position: 'Senior Lecturer',
     organization: 'SLIIT, Faculty of Computing',
+    orgLogo: '/images/logos/sliit.png',
     photo: '/images/members/Thilini Jayalath.png',
     linkedin: '#',
     isSupervisor: true,
@@ -259,8 +260,9 @@ export const team = [
   {
     name: 'Ms. Hansi De Silva',
     supervisorTitle: 'Co-Supervisor',
-    position: 'Lecturer',                           // update if needed
+    position: 'Lecturer',
     organization: 'SLIIT, Faculty of Computing',
+    orgLogo: '/images/logos/sliit.png',
     photo: '/images/members/Hansi De Silva.png',
     linkedin: '#',
     isSupervisor: true,
@@ -268,8 +270,9 @@ export const team = [
   {
     name: 'Mr. Samitha Vidhanaarachchi',
     supervisorTitle: 'External Supervisor',
-    position: 'External Supervisor',               // update with actual position
-    organization: 'Coral Wall Diving & Research Centre',
+    position: 'PhD Student',
+    organization: 'Murdoch University, Australia',
+    orgLogo: '/images/logos/murdoch.png',
     photo: '/images/members/Samitha.png',
     linkedin: '#',
     isSupervisor: true,
@@ -277,8 +280,9 @@ export const team = [
   {
     name: 'Admiral Piyal De Silva',
     supervisorTitle: 'External Supervisor',
-    position: 'Admiral',                            // update if needed
-    organization: 'Sri Lanka Navy',                 // update if needed
+    position: 'Commander (Retd)',
+    organization: 'Sri Lanka Navy',
+    orgLogo: '/images/logos/navy.png',
     photo: '/images/members/Piyal de Silva.png',
     linkedin: '#',
     isSupervisor: true,
@@ -291,7 +295,7 @@ export const team = [
     role: 'GIS-Based Spatial Decision Modeling',
     photo: '/images/members/Senith.png',
     linkedin: 'https://www.linkedin.com/in/senith-udara/',
-    email: '',                                      // add email address
+    email: 'senithudara0000@gmail.com',                                      // add email address
     isSupervisor: false,
   },
   {
@@ -299,8 +303,8 @@ export const team = [
     studentId: 'IT22227904',
     role: 'Coral Species Classification & Growth Quantification',
     photo: '/images/members/Dinithi.png',
-    linkedin: '#',
-    email: '',                                      // add email address
+    linkedin: 'https://www.linkedin.com/in/dinithi-wickramaarachchi/',
+    email: 'dinithiwr@gmail.com',                                      // add email address
     isSupervisor: false,
   },
   {
@@ -309,7 +313,7 @@ export const team = [
     role: 'Coral Bleaching Detection',
     photo: '/images/members/Sahan.png',
     linkedin: 'https://www.linkedin.com/in/sahan-kavishka-62652a288/',
-    email: '',                                      // add email address
+    email: 'sahanwsk@gmail.com',                                      // add email address
     isSupervisor: false,
   },
   {
@@ -318,7 +322,7 @@ export const team = [
     role: 'Thermal Stress Forecasting',
     photo: '/images/members/Gimhani.png',
     linkedin: 'https://www.linkedin.com/in/gimhaninavodya/',
-    email: '',                                      // add email address
+    email: 'gimhanibrahmanage@gmail.com',                                      // add email address
     isSupervisor: false,
   },
 ]
