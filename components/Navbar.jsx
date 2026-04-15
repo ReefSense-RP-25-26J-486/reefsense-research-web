@@ -56,9 +56,9 @@ export default function Navbar() {
           className="flex items-center"
         >
           <img
-            src="/images/logos/ReefSense wide Logo.png"
+            src="/images/logos/ReefSense_text_only.png"
             alt="ReefSense"
-            style={{ height: '32px', width: 'auto', objectFit: 'contain' }}
+            style={{ height: '28px', width: 'auto', objectFit: 'contain' }}
           />
         </a>
 
