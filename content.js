@@ -43,18 +43,17 @@ Active coral restoration programmes do exist across Sri Lanka. Nursery-based cor
     },
   ],
   objectives: [
-    'Automate coral species identification and growth quantification using computer vision.',
-    'Detect coral bleaching events in real time from underwater imagery.',
-    'Forecast thermal stress using satellite-derived sea surface temperature data.',
-    'Identify optimal coral nursery placement sites using GIS and multi-criteria decision analysis.',
-    'Provide an integrated decision support interface for conservation practitioners.',
+    'Identify the most ideal locations for coral structure placement to optimize restoration zone area.',
+    'Automate the identification of coral species and monitor& quantify their growth.',
+    'Automate Detection and Quantification of Coral Bleaching and provide severe classification.',
+    'Calculate & predict temperatures for different depths of water according to surface temperature.',
   ],
 }
 
 export const systemOverview = {
   sectionLabel: '// 02 — SYSTEM ARCHITECTURE',
   description:
-    'ReefSense is structured around five interconnected AI components, each addressing a distinct challenge in coral reef conservation.',
+    'ReefSense is structured around four interconnected AI components, each addressing a distinct challenge in coral reef conservation.',
   imagePath: '/images/system-overview.png',
   imageAlt: 'ReefSense system architecture diagram',
   components: [
@@ -203,41 +202,106 @@ export const resourcesSection = {
   sectionLabel: '// 05 — RESOURCES',
 }
 
-export const resources = [
+export const documents = [
   {
-    type: 'document',
-    label: 'Research Proposal',
-    description: 'Initial project proposal submitted to SLIIT Faculty of Computing.',
-    filePath: '/downloads/reefsense-proposal.pdf',
-    fileType: 'PDF',
+    label: 'Topic Assessment',
+    submittedDate: '2024/02/25',
+    status: 'submitted',
+    downloads: [
+      { scope: 'Group', url: '#' },
+    ],
   },
   {
-    type: 'document',
-    label: 'Progress Report',
-    description: 'Mid-project progress report covering completed phases and results.',
-    filePath: '/downloads/reefsense-progress-report.pdf',
-    fileType: 'PDF',
+    label: 'Project Charter',
+    submittedDate: '2024/02/25',
+    status: 'submitted',
+    downloads: [
+      { scope: 'Group', url: '#' },
+    ],
   },
   {
-    type: 'document',
-    label: 'Conference Paper Draft',
-    description: 'Working draft of the TENSYMP 2026 submission.',
-    filePath: '/downloads/reefsense-paper-draft.pdf',
-    fileType: 'PDF',
+    label: 'Project Proposal',
+    submittedDate: '2024/03/22',
+    status: 'submitted',
+    downloads: [
+      { scope: 'Individual', url: '#' },
+    ],
   },
   {
-    type: 'document',
-    label: 'Research Presentation',
-    description: 'Slide deck covering all five project phases and findings.',
-    filePath: '/downloads/reefsense-presentation.pptx',
-    fileType: 'PPTX',
+    label: 'Status Documents I',
+    submittedDate: '2024/07/05',
+    status: 'submitted',
+    downloads: [
+      { scope: 'Individual', url: '#' },
+    ],
   },
   {
-    type: 'link',
-    label: 'GitHub Repository',
-    description: 'Source code for all ReefSense AI components and the mobile application.',
-    url: 'https://github.com/your-repo',
-    fileType: 'GitHub',
+    label: 'Status Documents II',
+    submittedDate: null,
+    status: 'pending',   // link will be updated soon
+    downloads: [
+      { scope: 'Individual', url: '#' },
+    ],
+  },
+  {
+    label: 'Research Paper',
+    submittedDate: null,
+    status: 'pending',   // link will be updated soon
+    downloads: [
+      { scope: 'Group', url: '#' },
+    ],
+  },
+  {
+    label: 'Final Report',
+    submittedDate: '2025/10/13',
+    status: 'pending',
+    downloads: [
+      { scope: 'Group', url: '#' },
+      { scope: 'Individual', url: '#' },
+    ],
+  },
+  {
+    label: 'Poster',
+    submittedDate: null,
+    status: 'pending',
+    downloads: [
+      { scope: 'Group', url: '#' },
+    ],
+  },
+]
+
+export const presentations = [
+  {
+    label: 'Proposal Presentation',
+    submittedDate: null,
+    status: 'pending',
+    downloads: [
+      { scope: 'Group', url: '#' },
+    ],
+  },
+  {
+    label: 'Progress Presentation I',
+    submittedDate: null,
+    status: 'pending',
+    downloads: [
+      { scope: 'Group', url: '#' },
+    ],
+  },
+  {
+    label: 'Progress Presentation II',
+    submittedDate: null,
+    status: 'pending',
+    downloads: [
+      { scope: 'Group', url: '#' },
+    ],
+  },
+  {
+    label: 'Final Presentation',
+    submittedDate: null,
+    status: 'pending',
+    downloads: [
+      { scope: 'Group', url: '#' },
+    ],
   },
 ]
 
@@ -254,7 +318,7 @@ export const team = [
     organization: 'SLIIT, Faculty of Computing',
     orgLogo: '/images/logos/sliit.png',
     photo: '/images/members/Thilini Jayalath.png',
-    linkedin: '#',
+    linkedin: 'https://www.linkedin.com/in/thilini-jayalath-2815b4b0/',
     isSupervisor: true,
   },
   {
@@ -264,17 +328,17 @@ export const team = [
     organization: 'SLIIT, Faculty of Computing',
     orgLogo: '/images/logos/sliit.png',
     photo: '/images/members/Hansi De Silva.png',
-    linkedin: '#',
+    linkedin: 'https://www.linkedin.com/in/hansi-de-silva-03629b79/',
     isSupervisor: true,
   },
   {
     name: 'Mr. Samitha Vidhanaarachchi',
     supervisorTitle: 'External Supervisor',
-    position: 'PhD Student',
+    position: 'PhD Candidate',
     organization: 'Murdoch University, Australia',
     orgLogo: '/images/logos/murdoch.png',
     photo: '/images/members/Samitha.png',
-    linkedin: '#',
+    linkedin: 'https://www.linkedin.com/in/samitha-vidhana-arachchi/',
     isSupervisor: true,
   },
   {
@@ -284,7 +348,7 @@ export const team = [
     organization: 'Sri Lanka Navy',
     orgLogo: '/images/logos/navy.png',
     photo: '/images/members/Piyal de Silva.png',
-    linkedin: '#',
+    linkedin: 'https://en.wikipedia.org/wiki/Piyal_De_Silva',
     isSupervisor: true,
   },
 

@@ -1,13 +1,170 @@
 'use client'
 
-import { Download, ExternalLink, FileText, Presentation, GitBranch, ArrowDown } from 'lucide-react'
+import { ExternalLink, FileText, Presentation } from 'lucide-react'
 import SectionHeading from '@/components/ui/SectionHeading'
-import { resources, resourcesSection } from '@/content'
+import { documents, presentations, resourcesSection } from '@/content'
 
-const typeConfig = {
-  PDF: { icon: FileText, color: '#ff6b52', bg: 'rgba(255,107,82,0.08)', border: 'rgba(255,107,82,0.25)' },
-  PPTX: { icon: Presentation, color: '#7a9db8', bg: 'rgba(122,157,184,0.08)', border: 'rgba(122,157,184,0.25)' },
-  GitHub: { icon: GitBranch, color: '#00d4b4', bg: 'rgba(0,212,180,0.06)', border: 'rgba(0,212,180,0.25)' },
+const scopeColors = {
+  Group: { color: '#00d4b4', bg: 'rgba(0,212,180,0.08)', border: 'rgba(0,212,180,0.2)' },
+  Individual: { color: '#7a9db8', bg: 'rgba(122,157,184,0.08)', border: 'rgba(122,157,184,0.2)' },
+}
+
+function ScopeBadge({ scope }) {
+  const s = scopeColors[scope] || scopeColors.Group
+  return (
+    <span
+      className="font-mono px-2 py-0.5 whitespace-nowrap"
+      style={{
+        color: s.color,
+        background: s.bg,
+        border: `1px solid ${s.border}`,
+        fontSize: '9px',
+        letterSpacing: '0.08em',
+        borderRadius: '3px',
+      }}
+    >
+      {scope.toUpperCase()}
+    </span>
+  )
+}
+
+function DownloadButton({ url, disabled }) {
+  if (disabled || !url || url === '#') {
+    return (
+      <span
+        className="font-mono inline-flex items-center gap-1.5 px-3 py-1.5 whitespace-nowrap"
+        style={{
+          color: '#2a4a5a',
+          border: '1px solid rgba(42,74,90,0.4)',
+          borderRadius: '4px',
+          fontSize: '10px',
+          cursor: 'default',
+        }}
+      >
+        Soon
+      </span>
+    )
+  }
+  return (
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="font-mono inline-flex items-center gap-1.5 px-3 py-1.5 transition-all whitespace-nowrap"
+      style={{
+        color: '#00d4b4',
+        border: '1px solid rgba(0,212,180,0.3)',
+        borderRadius: '4px',
+        fontSize: '10px',
+        letterSpacing: '0.05em',
+      }}
+      onMouseOver={(e) => (e.currentTarget.style.background = 'rgba(0,212,180,0.08)')}
+      onMouseOut={(e) => (e.currentTarget.style.background = 'transparent')}
+    >
+      Download
+      <ExternalLink size={10} />
+    </a>
+  )
+}
+
+function ResourceRow({ item }) {
+  const isPending = item.status === 'pending'
+
+  return (
+    <div
+      className="flex flex-wrap items-center gap-x-6 gap-y-3 px-5 py-4 transition-colors"
+      style={{
+        borderBottom: '1px solid rgba(0,212,180,0.06)',
+      }}
+      onMouseOver={(e) => (e.currentTarget.style.background = 'rgba(0,212,180,0.03)')}
+      onMouseOut={(e) => (e.currentTarget.style.background = 'transparent')}
+    >
+      {/* Title */}
+      <p
+        className="font-display font-medium flex-1 min-w-[160px]"
+        style={{ color: isPending ? '#3a5a6a' : '#e8f4f8', fontSize: '0.9rem' }}
+      >
+        {item.label}
+      </p>
+
+      {/* Date / status */}
+      <p
+        className="font-mono"
+        style={{
+          color: isPending ? '#2a4a5a' : '#7a9db8',
+          fontSize: '10px',
+          minWidth: '140px',
+        }}
+      >
+        {isPending ? 'Link will be updated soon' : `Submitted on ${item.submittedDate}`}
+      </p>
+
+      {/* Scope badges + download buttons grouped per download entry */}
+      <div className="flex items-center gap-3 flex-wrap">
+        {item.downloads.map((dl, i) => (
+          <div key={i} className="flex items-center gap-2">
+            <ScopeBadge scope={dl.scope} />
+            <DownloadButton url={dl.url} disabled={isPending} />
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+function ResourceGroup({ title, icon: Icon, items }) {
+  return (
+    <div className="mb-12">
+      {/* Group header */}
+      <div className="flex items-center gap-3 mb-4">
+        <Icon size={14} style={{ color: '#00d4b4' }} />
+        <p
+          className="font-mono"
+          style={{ color: '#00d4b4', fontSize: '10px', letterSpacing: '0.15em' }}
+        >
+          {title}
+        </p>
+      </div>
+
+      <div
+        style={{
+          background: '#0a1628',
+          border: '1px solid rgba(0,212,180,0.08)',
+          borderRadius: '6px',
+          overflow: 'hidden',
+        }}
+      >
+        {/* Column headers */}
+        <div
+          className="flex flex-wrap items-center gap-x-6 px-5 py-3"
+          style={{ borderBottom: '1px solid rgba(0,212,180,0.1)' }}
+        >
+          <p
+            className="font-mono flex-1 min-w-[160px]"
+            style={{ color: '#2a4a5a', fontSize: '9px', letterSpacing: '0.12em' }}
+          >
+            DOCUMENT
+          </p>
+          <p
+            className="font-mono"
+            style={{ color: '#2a4a5a', fontSize: '9px', letterSpacing: '0.12em', minWidth: '140px' }}
+          >
+            STATUS
+          </p>
+          <p
+            className="font-mono"
+            style={{ color: '#2a4a5a', fontSize: '9px', letterSpacing: '0.12em' }}
+          >
+            SCOPE &amp; DOWNLOAD
+          </p>
+        </div>
+
+        {items.map((item) => (
+          <ResourceRow key={item.label} item={item} />
+        ))}
+      </div>
+    </div>
+  )
 }
 
 export default function Resources() {
@@ -21,105 +178,20 @@ export default function Resources() {
         <SectionHeading
           label={resourcesSection.sectionLabel}
           title="Resources"
-          subtitle="Download project documents and access the source code."
+          subtitle="Project documents and presentations. Download links open in a new tab."
         />
 
-        <div className="grid sm:grid-cols-2 gap-4">
-          {resources.map((res) => {
-            const cfg = typeConfig[res.fileType] || typeConfig.PDF
-            const Icon = cfg.icon
+        <ResourceGroup
+          title="DOCUMENTS"
+          icon={FileText}
+          items={documents}
+        />
 
-            return (
-              <div
-                key={res.label}
-                className="card-hover relative flex flex-col justify-between p-6"
-                style={{
-                  background: '#0a1628',
-                  border: '1px solid rgba(0,212,180,0.08)',
-                  borderRadius: '6px',
-                }}
-              >
-                {/* File type badge */}
-                <div className="flex items-center justify-between mb-5">
-                  <span
-                    className="font-mono inline-flex items-center gap-1.5 px-2.5 py-1"
-                    style={{
-                      color: cfg.color,
-                      background: cfg.bg,
-                      border: `1px solid ${cfg.border}`,
-                      fontSize: '10px',
-                      letterSpacing: '0.08em',
-                      borderRadius: '3px',
-                    }}
-                  >
-                    <Icon size={11} />
-                    {res.fileType}
-                  </span>
-                </div>
-
-                <div className="flex-1 mb-6">
-                  <h3
-                    className="font-display font-semibold mb-2"
-                    style={{ color: '#e8f4f8', fontSize: '1rem' }}
-                  >
-                    {res.label}
-                  </h3>
-                  <p
-                    className="font-sans"
-                    style={{ color: '#7a9db8', fontSize: '0.875rem', lineHeight: 1.7, fontWeight: 300 }}
-                  >
-                    {res.description}
-                  </p>
-                </div>
-
-                {res.type === 'link' ? (
-                  <a
-                    href={res.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 font-sans font-medium text-sm transition-all px-4 py-2 self-start"
-                    style={{
-                      color: '#00d4b4',
-                      border: '1px solid rgba(0,212,180,0.3)',
-                      borderRadius: '4px',
-                      fontSize: '0.8rem',
-                    }}
-                    onMouseOver={(e) => {
-                      e.currentTarget.style.background = 'rgba(0,212,180,0.08)'
-                    }}
-                    onMouseOut={(e) => {
-                      e.currentTarget.style.background = 'transparent'
-                    }}
-                  >
-                    Visit Repository
-                    <ExternalLink size={12} />
-                  </a>
-                ) : (
-                  <a
-                    href={res.filePath}
-                    download
-                    className="inline-flex items-center gap-2 font-sans font-medium text-sm transition-all px-4 py-2 self-start"
-                    style={{
-                      color: '#00d4b4',
-                      border: '1px solid rgba(0,212,180,0.3)',
-                      borderRadius: '4px',
-                      fontSize: '0.8rem',
-                    }}
-                    onMouseOver={(e) => {
-                      e.currentTarget.style.background = 'rgba(0,212,180,0.08)'
-                    }}
-                    onMouseOut={(e) => {
-                      e.currentTarget.style.background = 'transparent'
-                    }}
-                  >
-                    Download
-                    <ArrowDown size={12} />
-                  </a>
-                )}
-              </div>
-            )
-          })}
-        </div>
+        <ResourceGroup
+          title="PRESENTATIONS"
+          icon={Presentation}
+          items={presentations}
+        />
       </div>
     </section>
   )

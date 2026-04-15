@@ -116,7 +116,7 @@ function SupervisorCard({ member }) {
             onMouseOut={(e) => (e.currentTarget.style.color = '#2a4a5a')}
           >
             <Link size={12} />
-            LinkedIn
+            {member.linkedin.includes('wikipedia') ? 'Wikipedia' : 'LinkedIn'}
           </a>
         )}
       </div>
