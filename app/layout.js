@@ -23,6 +23,10 @@ export const metadata = {
   title: 'ReefSense — Coral Reef Monitoring & Restoration AI',
   description:
     'AI-driven decision support system for coral reef conservation. SLIIT Research Project RP-25-26J-486.',
+  icons: {
+    icon: '/images/logos/ReefSense_Icon.png',
+    apple: '/images/logos/ReefSense_Icon.png',
+  },
 }
 
 export default function RootLayout({ children }) {
