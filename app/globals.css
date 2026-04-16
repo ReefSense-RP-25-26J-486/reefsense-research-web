@@ -15,7 +15,7 @@
   /* Typography — Garet for display, Inter for body */
   --font-sans: var(--font-inter);
   --font-display: 'Garet', system-ui, sans-serif;
-  --font-mono: var(--font-jetbrains-mono);
+  --font-mono: var(--font-space-grotesk);
 }
 
 /* ─── CSS Variables ─────────────────────────────── */
