@@ -5,24 +5,21 @@ import { methodology, methodologySection } from '@/content'
 function ImagePlaceholder({ filename, alt }) {
   return (
     <div
-      className="card-hover w-full overflow-hidden"
+      className="w-full overflow-hidden"
       style={{
         aspectRatio: '16/9',
-        background: '#050d1a',
-        border: '1px solid rgba(0, 212, 180, 0.1)',
+        background: '#edf4f5',
+        border: '1px solid rgba(0,153,170,0.12)',
         borderRadius: '6px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
       }}
     >
-      <p
-        className="font-mono text-center px-4"
-        style={{ color: '#2a4a5a', fontSize: '11px', lineHeight: 1.8 }}
-      >
+      <p className="font-mono text-center px-4" style={{ color: '#94b5be', fontSize: '11px', lineHeight: 1.8 }}>
         {alt}
         <br />
-        <span style={{ color: 'rgba(0,212,180,0.25)' }}>/public/images/{filename}</span>
+        <span style={{ color: 'rgba(0,153,170,0.4)' }}>/public/images/{filename}</span>
       </p>
     </div>
   )
@@ -30,24 +27,19 @@ function ImagePlaceholder({ filename, alt }) {
 
 export default function Methodology() {
   return (
-    <section
-      id="methodology"
-      className="py-24 md:py-32 px-6"
-      style={{ background: '#050d1a' }}
-    >
+    <section id="methodology" className="py-24 md:py-32 px-6" style={{ background: '#f4f8f8' }}>
       <div className="max-w-6xl mx-auto">
         <SectionHeading
           label={methodologySection.sectionLabel}
           title="Methodology"
-          subtitle="Five AI-powered components working in concert to address coral reef conservation."
+          subtitle="Four AI and GIS components working in concert to address coral reef conservation."
         />
 
-        {/* Vertical timeline layout */}
         <div className="relative">
           {/* Timeline line */}
           <div
             className="absolute left-5 top-0 bottom-0 w-px hidden md:block"
-            style={{ background: 'rgba(0,212,180,0.15)' }}
+            style={{ background: 'rgba(0,153,170,0.2)' }}
           />
 
           <div className="flex flex-col gap-16 md:gap-20">
@@ -62,9 +54,9 @@ export default function Methodology() {
                     <div
                       className="w-10 h-10 rounded-sm flex items-center justify-center font-mono font-medium z-10"
                       style={{
-                        background: '#0a1628',
-                        border: '1px solid rgba(0, 212, 180, 0.3)',
-                        color: '#00d4b4',
+                        background: '#ffffff',
+                        border: '1px solid rgba(0,153,170,0.3)',
+                        color: '#0099aa',
                         fontSize: '11px',
                         letterSpacing: '0.05em',
                         flexShrink: 0,
@@ -76,42 +68,22 @@ export default function Methodology() {
 
                   {/* Content */}
                   <div className="flex-1 grid md:grid-cols-2 gap-8 lg:gap-12 items-start">
-                    {/* Image */}
                     <div>
                       <ImagePlaceholder filename={filename} alt={item.imageAlt} />
                     </div>
-
-                    {/* Text */}
                     <div>
-                      {/* Mobile node number */}
-                      <p
-                        className="font-mono md:hidden mb-2"
-                        style={{ color: '#00d4b4', fontSize: '11px' }}
-                      >
-                        {num}
-                      </p>
-                      <h3
-                        className="font-display font-semibold mb-1.5 leading-snug"
-                        style={{ color: '#e8f4f8', fontSize: '1.25rem' }}
-                      >
+                      <p className="font-mono md:hidden mb-2" style={{ color: '#0099aa', fontSize: '11px' }}>{num}</p>
+                      <h3 className="font-display font-semibold mb-1.5 leading-snug" style={{ color: '#0d1f2d', fontSize: '1.2rem' }}>
                         {item.title}
                       </h3>
-                      <p
-                        className="font-mono mb-5"
-                        style={{ color: 'rgba(0,212,180,0.5)', fontSize: '11px' }}
-                      >
+                      <p className="font-mono mb-5" style={{ color: 'rgba(0,153,170,0.7)', fontSize: '11px' }}>
                         {item.contributor}
                       </p>
-                      <p
-                        className="font-sans mb-6 leading-relaxed"
-                        style={{ color: '#7a9db8', fontSize: '0.95rem', lineHeight: 1.8, fontWeight: 300 }}
-                      >
+                      <p className="font-sans mb-6 leading-relaxed" style={{ color: '#3d5566', fontSize: '0.95rem', lineHeight: 1.8, fontWeight: 300 }}>
                         {item.description}
                       </p>
                       <div className="flex flex-wrap gap-2">
-                        {item.tools.map((tool) => (
-                          <Tag key={tool} label={tool} />
-                        ))}
+                        {item.tools.map((tool) => <Tag key={tool} label={tool} />)}
                       </div>
                     </div>
                   </div>

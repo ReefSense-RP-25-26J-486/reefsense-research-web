@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
-import { siteConfig, navLinks } from '@/content'
+import { navLinks } from '@/content'
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -34,31 +34,26 @@ export default function Navbar() {
   const handleNavClick = (e, href) => {
     e.preventDefault()
     setMenuOpen(false)
-    const el = document.querySelector(href)
-    if (el) el.scrollIntoView({ behavior: 'smooth' })
+    const target = href === '#' ? document.body : document.querySelector(href)
+    if (target) target.scrollIntoView({ behavior: 'smooth' })
   }
 
   return (
     <nav
       className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md transition-all duration-300"
       style={{
-        background: scrolled
-          ? 'rgba(5, 13, 26, 0.95)'
-          : 'rgba(5, 13, 26, 0.85)',
-        borderBottom: '1px solid rgba(0, 212, 180, 0.1)',
+        background: scrolled ? 'rgba(255,255,255,0.97)' : 'rgba(255,255,255,0.92)',
+        borderBottom: '1px solid rgba(0,153,170,0.15)',
+        boxShadow: scrolled ? '0 1px 12px rgba(0,80,100,0.07)' : 'none',
       }}
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <a
-          href="#"
-          onClick={(e) => handleNavClick(e, '#')}
-          className="flex items-center"
-        >
+        <a href="#" onClick={(e) => handleNavClick(e, '#')} className="flex items-center">
           <img
-            src="/images/logos/ReefSense_text_only.png"
+            src="/images/logos/ReefSense wide Logo.png"
             alt="ReefSense"
-            style={{ height: '28px', width: 'auto', objectFit: 'contain' }}
+            style={{ height: '32px', width: 'auto', objectFit: 'contain' }}
           />
         </a>
 
@@ -74,22 +69,17 @@ export default function Navbar() {
                   onClick={(e) => handleNavClick(e, link.href)}
                   className="relative px-4 py-2 text-sm font-sans transition-colors group"
                   style={{
-                    color: isActive ? '#00d4b4' : '#7a9db8',
-                    fontWeight: 400,
+                    color: isActive ? '#0099aa' : '#3d5566',
+                    fontWeight: isActive ? 500 : 400,
                   }}
-                  onMouseOver={(e) => {
-                    if (!isActive) e.currentTarget.style.color = '#e8f4f8'
-                  }}
-                  onMouseOut={(e) => {
-                    if (!isActive) e.currentTarget.style.color = '#7a9db8'
-                  }}
+                  onMouseOver={(e) => { if (!isActive) e.currentTarget.style.color = '#0d1f2d' }}
+                  onMouseOut={(e) => { if (!isActive) e.currentTarget.style.color = '#3d5566' }}
                 >
                   {link.label}
-                  {/* Sliding underline */}
                   <span
                     className="absolute bottom-0 left-4 right-4 h-px transition-transform duration-200 origin-left"
                     style={{
-                      background: '#00d4b4',
+                      background: '#0099aa',
                       transform: isActive ? 'scaleX(1)' : 'scaleX(0)',
                     }}
                   />
@@ -102,11 +92,11 @@ export default function Navbar() {
         {/* Mobile hamburger */}
         <button
           className="md:hidden p-2 transition-colors"
-          style={{ color: '#7a9db8' }}
+          style={{ color: '#5a7a8a' }}
           onClick={() => setMenuOpen((v) => !v)}
           aria-label="Toggle menu"
-          onMouseOver={(e) => (e.currentTarget.style.color = '#00d4b4')}
-          onMouseOut={(e) => (e.currentTarget.style.color = '#7a9db8')}
+          onMouseOver={(e) => (e.currentTarget.style.color = '#0099aa')}
+          onMouseOut={(e) => (e.currentTarget.style.color = '#5a7a8a')}
         >
           {menuOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
@@ -117,8 +107,8 @@ export default function Navbar() {
         <div
           className="md:hidden px-6 pb-4 backdrop-blur-md"
           style={{
-            background: 'rgba(5, 13, 26, 0.98)',
-            borderTop: '1px solid rgba(0, 212, 180, 0.08)',
+            background: 'rgba(255,255,255,0.98)',
+            borderTop: '1px solid rgba(0,153,170,0.1)',
           }}
         >
           <ul className="flex flex-col gap-1 pt-3">
@@ -132,10 +122,8 @@ export default function Navbar() {
                     onClick={(e) => handleNavClick(e, link.href)}
                     className="flex items-center gap-3 px-3 py-2.5 text-sm transition-colors"
                     style={{
-                      color: isActive ? '#00d4b4' : '#7a9db8',
-                      borderLeft: isActive
-                        ? '2px solid #00d4b4'
-                        : '2px solid transparent',
+                      color: isActive ? '#0099aa' : '#3d5566',
+                      borderLeft: isActive ? '2px solid #0099aa' : '2px solid transparent',
                     }}
                   >
                     {link.label}

@@ -17,6 +17,7 @@ export const navLinks = [
   { label: 'Milestones', href: '#milestones' },
   { label: 'Resources', href: '#resources' },
   { label: 'Team', href: '#team' },
+  { label: 'Contact', href: '#contact' },
 ]
 
 export const about = {
@@ -53,39 +54,33 @@ Active coral restoration programmes do exist across Sri Lanka. Nursery-based cor
 export const systemOverview = {
   sectionLabel: '// 02 — SYSTEM ARCHITECTURE',
   description:
-    'ReefSense is structured around four interconnected AI components, each addressing a distinct challenge in coral reef conservation.',
+    'ReefSense is structured around four interconnected AI and GIS components, each addressing a distinct challenge in coral reef conservation.',
   imagePath: '/images/system-overview.png',
   imageAlt: 'ReefSense system architecture diagram',
   components: [
     {
-      label: 'Coral Instance Segmentation',
+      label: 'GIS-Based Spatial Planning for Nursery Placement',
       index: '01',
       description:
-        'YOLO11-based detection and segmentation of individual coral instances from underwater imagery.',
+        'AHP multi-criteria spatial decision model scoring candidate nursery sites across 5 weighted criteria using QGIS and PostGIS.',
     },
     {
-      label: 'Species Classification',
+      label: 'Coral Species Identification & Growth Monitoring',
       index: '02',
       description:
-        'EfficientNet-B0 classifier identifying coral species from segmented image crops.',
+        'EfficientNet-B0 classifier identifies coral species; colony masks track area change over time as a growth proxy.',
     },
     {
-      label: 'Bleaching Detection',
+      label: 'Bleaching Detection and Quantification',
       index: '03',
       description:
-        'Color and texture analysis pipeline for identifying bleached coral regions.',
+        'Color-space analysis pipeline detects bleached coral regions and computes a per-colony bleaching index.',
     },
     {
       label: 'Thermal Forecasting',
       index: '04',
       description:
-        'CNN-LSTM model predicting sea surface temperature anomalies from satellite data.',
-    },
-    {
-      label: 'GIS Nursery Placement',
-      index: '05',
-      description:
-        'AHP multi-criteria decision model scoring 300+ candidate nursery sites across 5 weighted criteria.',
+        'CNN-LSTM hybrid model forecasts sea surface temperature anomalies and triggers early-warning bleaching alerts.',
     },
   ],
 }
@@ -97,48 +92,39 @@ export const methodologySection = {
 export const methodology = [
   {
     id: 'gis',
-    title: 'GIS-Based Nursery Site Suitability Analysis',
+    title: 'GIS-Based Spatial Planning for Nursery Placement',
     contributor: 'Senith Udara | IT22104830',
     imagePath: '/images/methodology-gis.png',
     imageAlt: 'GIS heatmap of candidate nursery sites',
-    description: `A spatial decision model built in QGIS and PostGIS evaluates over 300 candidate coral nursery locations across Port City Colombo. The Analytic Hierarchy Process (AHP) weights five criteria — water depth, current velocity, substrate type, proximity to existing reef, and human disturbance — to generate a ranked suitability score for each candidate site.`,
+    description: `A spatial decision model built in QGIS and PostGIS evaluates candidate coral nursery locations across Port City Colombo. The Analytic Hierarchy Process (AHP) weights five criteria — water depth, current velocity, substrate type, proximity to existing reef, and human disturbance — to generate a ranked suitability score for each candidate site, identifying optimal zones for coral structure deployment.`,
     tools: ['QGIS', 'PostGIS', 'Python', 'AHP'],
   },
   {
-    id: 'segmentation',
-    title: 'Coral Species Classification & Growth Quantification',
+    id: 'species',
+    title: 'Coral Species Identification & Growth Monitoring',
     contributor: 'Dinithi Wickramaarachchi | IT22227904',
     imagePath: '/images/methodology-yolo.png',
-    imageAlt: 'YOLO11 segmentation output on coral imagery',
-    description: `YOLO11 is fine-tuned on a coral-specific dataset to detect and segment individual coral colonies from underwater photographs. Segmentation masks are used to quantify colony area change over time, providing a proxy metric for growth rate.`,
-    tools: ['YOLO11', 'Python', 'PyTorch', 'OpenCV'],
-  },
-  {
-    id: 'classification',
-    title: 'Species Classification',
-    contributor: 'Team Member Name',
-    imagePath: '/images/methodology-efficientnet.png',
-    imageAlt: 'EfficientNet classification results',
-    description: `EfficientNet-B0, pre-trained on ImageNet and fine-tuned on a labeled coral species dataset, classifies coral species from segmented image crops. Transfer learning achieves high accuracy with a limited training set.`,
-    tools: ['EfficientNet-B0', 'TensorFlow', 'Keras'],
+    imageAlt: 'Species classification and growth monitoring pipeline',
+    description: `EfficientNet-B0, pre-trained on ImageNet and fine-tuned on a labeled coral species dataset, classifies coral species from underwater imagery. Segmentation masks are then applied to quantify colony area change across time-series photographs, providing a measurable growth rate proxy for restoration monitoring.`,
+    tools: ['EfficientNet-B0', 'TensorFlow', 'Keras', 'OpenCV'],
   },
   {
     id: 'bleaching',
-    title: 'Coral Bleaching Detection',
+    title: 'Bleaching Detection and Quantification',
     contributor: 'Sahan Kavishka | IT22233530',
     imagePath: '/images/methodology-bleaching.png',
     imageAlt: 'Bleaching detection output heatmap',
-    description: `A color-space analysis pipeline identifies bleached coral regions based on chromatic deviation from healthy coral baselines. The detector flags bleached areas within segmented colony masks and computes a bleaching index per colony.`,
+    description: `A color-space analysis pipeline identifies bleached coral regions based on chromatic deviation from healthy coral baselines. The system flags bleached areas within colony masks, computes a per-colony bleaching index, and classifies bleaching severity to support prioritised conservation response.`,
     tools: ['Python', 'OpenCV', 'scikit-learn'],
   },
   {
     id: 'forecasting',
-    title: 'Thermal Stress Forecasting',
+    title: 'Thermal Forecasting',
     contributor: 'Gimhani Navodya | IT22208712',
     imagePath: '/images/methodology-forecast.png',
     imageAlt: 'CNN-LSTM thermal forecast chart',
-    description: `A CNN-LSTM hybrid model processes historical satellite-derived sea surface temperature (SST) time series data to forecast thermal anomalies at the study site. Predictions trigger early-warning alerts for potential bleaching events.`,
-    tools: ['CNN-LSTM', 'TensorFlow', 'NASA EOSDIS'],
+    description: `A CNN-LSTM hybrid model processes historical satellite-derived sea surface temperature (SST) time series data to forecast thermal anomalies at the study site. Temperature predictions for varying water depths are calculated from surface readings, and anomaly thresholds trigger proactive early-warning alerts for potential bleaching events.`,
+    tools: ['CNN-LSTM', 'TensorFlow', 'NASA EOSDIS', 'Python'],
   },
 ]
 
@@ -148,53 +134,44 @@ export const milestonesSection = {
 
 export const milestones = [
   {
-    date: 'September 2024',
-    title: 'Project Proposal Submission',
-    description:
-      'Research proposal approved. Project scope, partner agreement with Coral Wall signed, and initial dataset collection begun.',
-    status: 'completed',
-  },
-  {
-    date: 'November 2024',
-    title: 'Literature Survey & Research Gap Analysis',
-    description:
-      'Completed comprehensive review of 40+ papers across coral conservation, computer vision, GIS, and thermal forecasting domains.',
-    status: 'completed',
-  },
-  {
-    date: 'January 2025',
-    title: 'Dataset Collection & Preprocessing',
-    description:
-      'Underwater imagery collected at Port City Colombo. GIS layers sourced. SST data pulled from NASA EOSDIS. All datasets preprocessed and structured.',
-    status: 'completed',
-  },
-  {
     date: 'March 2025',
-    title: 'Model Development — Phase 1',
+    title: 'Project Proposal',
     description:
-      'Initial YOLO11 segmentation model trained. EfficientNet-B0 baseline classifier achieved. AHP weight matrix finalized.',
+      'Research proposal submitted to SLIIT Faculty of Computing. Scope defined, partner agreement with Coral Wall Diving & Research Centre signed, and initial dataset collection commenced.',
     status: 'completed',
+    marks: '6%',
   },
   {
-    date: 'May 2025',
-    title: 'Model Integration & System Build',
+    date: 'June 2025',
+    title: 'Progress Presentation I',
     description:
-      'All five AI components integrated. Backend API development underway. Mobile application prototype built in React Native/Expo.',
-    status: 'active',
-  },
-  {
-    date: 'July 2025',
-    title: 'Evaluation & Paper Submission',
-    description:
-      'Full system evaluation against baseline metrics. Paper targeting TENSYMP 2026 to be submitted.',
-    status: 'upcoming',
+      'First progress presentation covering literature survey, research gap analysis, dataset preparation, and initial model development results across all four components.',
+    status: 'completed',
+    marks: '6%',
   },
   {
     date: 'September 2025',
-    title: 'Final Submission & Demonstration',
+    title: 'Progress Presentation II',
     description:
-      'Project final report, demonstration, and presentation to panel and partner stakeholders.',
+      'Second progress presentation demonstrating integrated model performance, system evaluation metrics, and the decision support platform prototype.',
+    status: 'active',
+    marks: '6%',
+  },
+  {
+    date: 'November 2025',
+    title: 'Final Assessment',
+    description:
+      'Final project report submission encompassing all four research components, complete system evaluation, and written research paper.',
     status: 'upcoming',
+    marks: '60%',
+  },
+  {
+    date: 'November 2025',
+    title: 'Viva',
+    description:
+      'Oral examination and demonstration of the ReefSense system to the evaluation panel and industry partner stakeholders.',
+    status: 'upcoming',
+    marks: '12%',
   },
 ]
 
@@ -305,6 +282,19 @@ export const presentations = [
   },
 ]
 
+export const contactSection = {
+  sectionLabel: '// 07 — CONTACT US',
+  email: 'reefsense@sliit.lk',
+  institution: 'SLIIT — Faculty of Computing',
+  address: 'New Kandy Road, Malabe, Sri Lanka',
+  members: [
+    { name: 'Senith Udara', email: 'senithudara0000@gmail.com' },
+    { name: 'Dinithi Wickramaarachchi', email: 'dinithiwr@gmail.com' },
+    { name: 'Sahan Kavishka', email: 'sahanwsk@gmail.com' },
+    { name: 'Gimhani Navodya', email: 'gimhanibrahmanage@gmail.com' },
+  ],
+}
+
 export const teamSection = {
   sectionLabel: '// 06 — THE TEAM',
 }
@@ -359,7 +349,7 @@ export const team = [
     role: 'GIS-Based Spatial Decision Modeling',
     photo: '/images/members/Senith.png',
     linkedin: 'https://www.linkedin.com/in/senith-udara/',
-    email: 'senithudara0000@gmail.com',                                      // add email address
+    email: 'senithudara0000@gmail.com',
     isSupervisor: false,
   },
   {
@@ -368,7 +358,7 @@ export const team = [
     role: 'Coral Species Classification & Growth Quantification',
     photo: '/images/members/Dinithi.png',
     linkedin: 'https://www.linkedin.com/in/dinithi-wickramaarachchi/',
-    email: 'dinithiwr@gmail.com',                                      // add email address
+    email: 'dinithiwr@gmail.com',
     isSupervisor: false,
   },
   {
@@ -377,7 +367,7 @@ export const team = [
     role: 'Coral Bleaching Detection',
     photo: '/images/members/Sahan.png',
     linkedin: 'https://www.linkedin.com/in/sahan-kavishka-62652a288/',
-    email: 'sahanwsk@gmail.com',                                      // add email address
+    email: 'sahanwsk@gmail.com',
     isSupervisor: false,
   },
   {
@@ -386,7 +376,7 @@ export const team = [
     role: 'Thermal Stress Forecasting',
     photo: '/images/members/Gimhani.png',
     linkedin: 'https://www.linkedin.com/in/gimhaninavodya/',
-    email: 'gimhanibrahmanage@gmail.com',                                      // add email address
+    email: 'gimhanibrahmanage@gmail.com',
     isSupervisor: false,
   },
 ]

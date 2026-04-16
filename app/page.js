@@ -6,6 +6,7 @@ import Methodology from '@/components/sections/Methodology'
 import Milestones from '@/components/sections/Milestones'
 import Resources from '@/components/sections/Resources'
 import Team from '@/components/sections/Team'
+import ContactUs from '@/components/sections/ContactUs'
 import Footer from '@/components/ui/Footer'
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
         <Milestones />
         <Resources />
         <Team />
+        <ContactUs />
       </main>
       <Footer />
     </>

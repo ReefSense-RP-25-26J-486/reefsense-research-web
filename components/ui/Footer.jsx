@@ -10,8 +10,8 @@ export default function Footer() {
     <footer
       style={{
         background: '#020810',
-        borderTop: '1px solid rgba(0, 212, 180, 0.2)',
-        boxShadow: '0 -1px 0 0 rgba(0, 212, 180, 0.1), 0 -4px 20px rgba(0, 212, 180, 0.05)',
+        borderTop: '1px solid rgba(0, 153, 170, 0.2)',
+        boxShadow: '0 -1px 0 0 rgba(0, 153, 170, 0.1), 0 -4px 20px rgba(0, 153, 170, 0.05)',
       }}
       className="py-10 px-6"
     >
@@ -46,7 +46,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="flex items-center gap-2 transition-colors"
               style={{ color: '#7a9db8', fontSize: '13px' }}
-              onMouseOver={(e) => (e.currentTarget.style.color = '#00d4b4')}
+              onMouseOver={(e) => (e.currentTarget.style.color = '#0099aa')}
               onMouseOut={(e) => (e.currentTarget.style.color = '#7a9db8')}
             >
               <GitBranch size={14} />
@@ -56,7 +56,7 @@ export default function Footer() {
               href={`mailto:${siteConfig.contactEmail}`}
               className="flex items-center gap-2 transition-colors"
               style={{ color: '#7a9db8', fontSize: '13px' }}
-              onMouseOver={(e) => (e.currentTarget.style.color = '#00d4b4')}
+              onMouseOver={(e) => (e.currentTarget.style.color = '#0099aa')}
               onMouseOut={(e) => (e.currentTarget.style.color = '#7a9db8')}
             >
               <Mail size={14} />
@@ -67,7 +67,7 @@ export default function Footer() {
 
         <div
           style={{
-            borderTop: '1px solid rgba(0, 212, 180, 0.08)',
+            borderTop: '1px solid rgba(0, 153, 170, 0.08)',
             paddingTop: '1.5rem',
           }}
         >
