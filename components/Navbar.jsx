@@ -40,7 +40,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md transition-all duration-300"
+      className="fixed top-0 left-0 right-0 z-50 p-4 backdrop-blur-md transition-all duration-300"
       style={{
         background: scrolled ? 'rgba(255,255,255,0.97)' : 'rgba(255,255,255,0.92)',
         borderBottom: '1px solid rgba(0,153,170,0.15)',
@@ -51,9 +51,9 @@ export default function Navbar() {
         {/* Logo */}
         <a href="#" onClick={(e) => handleNavClick(e, '#')} className="flex items-center">
           <img
-            src="/images/logos/ReefSense_text_only.png"
+            src="/images/logos/wide_logo.png"
             alt="ReefSense"
-            style={{ height: '32px', width: 'auto', objectFit: 'contain' }}
+            style={{ height: '72px', width: 'auto', objectFit: 'contain' }}
           />
         </a>
 

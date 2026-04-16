@@ -173,7 +173,7 @@ export default function ContactUs() {
                     type="text"
                     name="name"
                     required
-                    placeholder="e.g. Jane Smith"
+                    placeholder="e.g. Kamal Herath"
                     value={form.name}
                     onChange={handleChange}
                     onFocus={handleFocus}
@@ -187,7 +187,7 @@ export default function ContactUs() {
                     type="email"
                     name="email"
                     required
-                    placeholder="e.g. jane@example.com"
+                    placeholder="e.g. kamalherath@example.com"
                     value={form.email}
                     onChange={handleChange}
                     onFocus={handleFocus}

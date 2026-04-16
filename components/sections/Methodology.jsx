@@ -34,7 +34,7 @@ export default function Methodology() {
         <SectionHeading
           label={methodologySection.sectionLabel}
           title="Methodology"
-          subtitle="Four AI and GIS components working in concert to address coral reef conservation."
+          // subtitle="Four AI and GIS components working in concert to address coral reef conservation."
         />
 
         <div className="relative">
@@ -46,7 +46,7 @@ export default function Methodology() {
 
           <div className="flex flex-col gap-16 md:gap-20">
             {methodology.map((item, i) => {
-              const filename = item.imagePath.replace('/images/', '')
+              const filename = item.imagePath.replace(' ', '')
               const num = String(i + 1).padStart(2, '0')
 
               return (

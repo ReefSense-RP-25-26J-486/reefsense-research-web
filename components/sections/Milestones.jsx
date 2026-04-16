@@ -112,7 +112,7 @@ export default function Milestones() {
         <SectionHeading
           label={milestonesSection.sectionLabel}
           title="Project Milestones"
-          subtitle="Assessment timeline with marks allocation. Click any milestone to expand details."
+          // subtitle="Assessment timeline with marks allocation. Click any milestone to expand details."
         />
 
         <div className="relative">

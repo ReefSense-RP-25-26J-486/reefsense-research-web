@@ -114,7 +114,7 @@ export const methodology = [
     id: 'gis',
     title: 'GIS-Based Spatial Planning for Nursery Placement',
     contributor: 'Senith Udara | IT22104830',
-    imagePath: '/images/methodology-gis.png',
+    imagePath: '/images/diagrams/gis.png',
     imageAlt: 'GIS heatmap of candidate nursery sites',
     description: `A spatial decision model built in QGIS and PostGIS evaluates candidate coral nursery locations across Port City Colombo. The Analytic Hierarchy Process (AHP) weights five criteria — water depth, current velocity, substrate type, proximity to existing reef, and human disturbance — to generate a ranked suitability score for each candidate site, identifying optimal zones for coral structure deployment.`,
     tools: ['QGIS', 'PostGIS', 'Python', 'AHP'],
@@ -154,45 +154,54 @@ export const milestonesSection = {
 
 export const milestones = [
   {
-    date: 'March 2025',
+    date: 'September 2025',
     title: 'Project Proposal',
     description:
       'Research proposal submitted to SLIIT Faculty of Computing. Scope defined, partner agreement with Coral Wall Diving & Research Centre signed, and initial dataset collection commenced.',
     status: 'completed',
-    marks: '6%',
+    marks: '12%',
   },
   {
-    date: 'June 2025',
+    date: 'January 2026',
     title: 'Progress Presentation I',
     description:
       'First progress presentation covering literature survey, research gap analysis, dataset preparation, and initial model development results across all four components.',
     status: 'completed',
-    marks: '6%',
+    marks: '15%',
   },
   {
-    date: 'September 2025',
+    date: 'March 2026',
     title: 'Progress Presentation II',
     description:
       'Second progress presentation demonstrating integrated model performance, system evaluation metrics, and the decision support platform prototype.',
+    status: 'completed',
+    marks: '18%',
+  },
+    {
+    date: 'April 2026',
+    title: 'Research Paper Submision',
+    description:
+      'Oral examination and demonstration of the ReefSense system to the evaluation panel and industry partner stakeholders.',
     status: 'active',
-    marks: '6%',
+    marks: '10%',
   },
   {
-    date: 'November 2025',
-    title: 'Final Assessment',
+    date: 'April 2026',
+    title: 'Final Assessment & Viva',
     description:
       'Final project report submission encompassing all four research components, complete system evaluation, and written research paper.',
     status: 'upcoming',
-    marks: '60%',
+    marks: '20%',
   },
-  {
-    date: 'November 2025',
-    title: 'Viva',
+    {
+    date: 'May 2026',
+    title: 'Final Report Submission',
     description:
-      'Oral examination and demonstration of the ReefSense system to the evaluation panel and industry partner stakeholders.',
+      'Final project report submission encompassing all four research components, complete system evaluation, and written research paper.',
     status: 'upcoming',
-    marks: '12%',
+    marks: '19%',
   },
+
 ]
 
 export const resourcesSection = {
@@ -205,7 +214,7 @@ export const documents = [
     submittedDate: '2024/02/25',
     status: 'submitted',
     downloads: [
-      { scope: 'Group', url: '#' },
+      { scope: 'Group', url: 'https://drive.google.com/file/d/1niL73qFAZOQBPC-LiCvh53UdDza_NaUN/view?usp=sharing' },
     ],
   },
   {
@@ -218,18 +227,18 @@ export const documents = [
   },
   {
     label: 'Project Proposal',
-    submittedDate: '2024/03/22',
+    submittedDate: '2025/09/19',
     status: 'submitted',
     downloads: [
-      { scope: 'Individual', url: '#' },
+      { scope: 'Individual', url: 'https://drive.google.com/drive/folders/1vFsRNX422TQMcdog6fXOz8u2o6Qr3sGH?usp=sharing' },
     ],
   },
   {
     label: 'Status Documents I',
-    submittedDate: '2024/07/05',
+    submittedDate: '2026/01/11',
     status: 'submitted',
     downloads: [
-      { scope: 'Individual', url: '#' },
+      { scope: 'Group', url: 'https://drive.google.com/drive/folders/1gI2Y6G-dZEcsHZaonyi4C0yrnH9se4Cs?usp=sharing' },
     ],
   },
   {
@@ -237,20 +246,28 @@ export const documents = [
     submittedDate: null,
     status: 'pending',   // link will be updated soon
     downloads: [
-      { scope: 'Individual', url: '#' },
+      { scope: 'Individual', url: 'https://drive.google.com/drive/folders/1_T8P9xy-p9aAtfJwzinchyjg1Z9BQ15m?usp=sharing' },
+    ],
+  },
+    {
+    label: 'Status Documents III',
+    submittedDate: null,
+    status: 'pending',   // link will be updated soon
+    downloads: [
+      { scope: 'Individual', url: 'https://drive.google.com/drive/folders/1-8y5mR9nVaP4sKTa251oLRdnfmjppWOt?usp=sharing' },
     ],
   },
   {
     label: 'Research Paper',
     submittedDate: null,
-    status: 'pending',   // link will be updated soon
+    status: 'submitted',   // link will be updated soon
     downloads: [
-      { scope: 'Group', url: '#' },
+      { scope: 'Group', url: 'https://drive.google.com/file/d/1dP-DsrkZQfOll3nAd5Jff_EnOU9K4rc1/view?usp=sharing' },
     ],
   },
   {
     label: 'Final Report',
-    submittedDate: '2025/10/13',
+    submittedDate: '2026/05/13',
     status: 'pending',
     downloads: [
       { scope: 'Group', url: '#' },
@@ -271,25 +288,25 @@ export const presentations = [
   {
     label: 'Proposal Presentation',
     submittedDate: null,
-    status: 'pending',
+    status: 'submitted',
     downloads: [
-      { scope: 'Group', url: '#' },
+      { scope: 'Group', url: 'https://canva.link/ge6sqwd8szxgr00' },
     ],
   },
   {
     label: 'Progress Presentation I',
     submittedDate: null,
-    status: 'pending',
+    status: 'submitted',
     downloads: [
-      { scope: 'Group', url: '#' },
+      { scope: 'Group', url: 'https://canva.link/swr2ftmaf78d0ef' },
     ],
   },
   {
     label: 'Progress Presentation II',
     submittedDate: null,
-    status: 'pending',
+    status: 'submitted',
     downloads: [
-      { scope: 'Group', url: '#' },
+      { scope: 'Group', url: 'https://canva.link/36tmjv32tzgzsid' },
     ],
   },
   {

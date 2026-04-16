@@ -22,7 +22,35 @@ export default function About() {
         {/* ── Research Gaps (left) | Our Solution (right) ── */}
         <div className="grid md:grid-cols-2 gap-10 mb-14">
           {/* Left — Research Gaps */}
-          <div>
+            <div>
+            <h3 className="font-display font-semibold mb-4" style={{ color: '#0d1f2d', fontSize: '1.1rem' }}>
+              Our Solution
+            </h3>
+            <p className="font-sans leading-relaxed mb-8"
+              style={{ color: '#3d5566', fontSize: '1rem', lineHeight: 1.85, fontWeight: 300 }}>
+              {about.proposedSolution}
+            </p>
+
+            {/* Research Objectives */}
+            <h3 className="font-display font-semibold mb-5" style={{ color: '#0d1f2d', fontSize: '1.1rem' }}>
+              Research Objectives
+            </h3>
+            <ol className="flex flex-col gap-4">
+              {about.objectives.map((obj, i) => (
+                <li key={i} className="flex gap-3">
+                  <span className="font-mono flex-shrink-0 mt-0.5" style={{ color: '#0099aa', fontSize: '13px' }}>→</span>
+                  <p className="font-sans leading-relaxed"
+                    style={{ color: '#3d5566', fontSize: '0.95rem', lineHeight: 1.8, fontWeight: 300 }}>
+                    {obj}
+                  </p>
+                </li>
+              ))}
+            </ol>
+          </div>
+         
+
+          {/* Right — Our Solution */}
+         <div>
             <h3 className="font-display font-semibold mb-5" style={{ color: '#0d1f2d', fontSize: '1.1rem' }}>
               Research Gaps Addressed
             </h3>
@@ -49,33 +77,6 @@ export default function About() {
                 </div>
               ))}
             </div>
-          </div>
-
-          {/* Right — Our Solution */}
-          <div>
-            <h3 className="font-display font-semibold mb-4" style={{ color: '#0d1f2d', fontSize: '1.1rem' }}>
-              Our Solution
-            </h3>
-            <p className="font-sans leading-relaxed mb-8"
-              style={{ color: '#3d5566', fontSize: '1rem', lineHeight: 1.85, fontWeight: 300 }}>
-              {about.proposedSolution}
-            </p>
-
-            {/* Research Objectives */}
-            <h3 className="font-display font-semibold mb-5" style={{ color: '#0d1f2d', fontSize: '1.1rem' }}>
-              Research Objectives
-            </h3>
-            <ol className="flex flex-col gap-4">
-              {about.objectives.map((obj, i) => (
-                <li key={i} className="flex gap-3">
-                  <span className="font-mono flex-shrink-0 mt-0.5" style={{ color: '#0099aa', fontSize: '13px' }}>→</span>
-                  <p className="font-sans leading-relaxed"
-                    style={{ color: '#3d5566', fontSize: '0.95rem', lineHeight: 1.8, fontWeight: 300 }}>
-                    {obj}
-                  </p>
-                </li>
-              ))}
-            </ol>
           </div>
         </div>
 

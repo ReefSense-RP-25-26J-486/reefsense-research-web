@@ -8,7 +8,7 @@ export default function SystemOverview() {
         <SectionHeading
           label={systemOverview.sectionLabel}
           title="System Architecture"
-          subtitle={systemOverview.description}
+          // subtitle={systemOverview.description}
         />
 
         {/* Architecture diagram */}

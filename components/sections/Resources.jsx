@@ -106,7 +106,7 @@ export default function Resources() {
         <SectionHeading
           label={resourcesSection.sectionLabel}
           title="Resources"
-          subtitle="Project documents and presentations. Download links open Google Drive in a new tab."
+          // subtitle="Project documents and presentations. Download links open Google Drive in a new tab."
         />
         <ResourceGroup title="DOCUMENTS" icon={FileText} items={documents} />
         <div className="glow-divider mb-12" />

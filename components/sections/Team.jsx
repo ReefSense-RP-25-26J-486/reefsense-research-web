@@ -205,7 +205,7 @@ export default function Team() {
         <SectionHeading
           label={teamSection.sectionLabel}
           title="The Team"
-          subtitle="Researchers bringing together expertise in AI, GIS, and marine conservation."
+          // subtitle="Researchers bringing together expertise in AI, GIS, and marine conservation."
         />
 
         {/* Supervisors */}
