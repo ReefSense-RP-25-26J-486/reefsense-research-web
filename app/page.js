@@ -8,11 +8,13 @@ import Resources from '@/components/sections/Resources'
 import Team from '@/components/sections/Team'
 import ContactUs from '@/components/sections/ContactUs'
 import Footer from '@/components/ui/Footer'
+import { Analytics } from "@vercel/analytics/next"
 
 export default function Home() {
   return (
     <>
       <Navbar />
+      <Analytics />
       <main>
         <Hero />
         <About />
