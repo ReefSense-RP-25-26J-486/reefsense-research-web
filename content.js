@@ -284,7 +284,10 @@ export const presentations = [
 
 export const contactSection = {
   sectionLabel: '// 07 — CONTACT US',
-  email: 'reefsense@sliit.lk',
+  email: 'reefsense486@gmail.com',
+  // Formspree endpoint — sign up free at formspree.io, create a form for reefsense486@gmail.com,
+  // then replace this with your endpoint e.g. 'https://formspree.io/f/xxxxxxxxxxx'
+  formEndpoint: 'https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID',
   institution: 'SLIIT — Faculty of Computing',
   address: 'New Kandy Road, Malabe, Sri Lanka',
   members: [
