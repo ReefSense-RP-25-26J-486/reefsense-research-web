@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Mail, MapPin, Building, Send, CheckCircle, AlertCircle } from 'lucide-react'
+import { Mail, MapPin, Building, Send, CheckCircle, AlertCircle, Phone } from 'lucide-react'
 import SectionHeading from '@/components/ui/SectionHeading'
 import { contactSection } from '@/content'
 
@@ -93,18 +93,18 @@ export default function ContactUs() {
               <div className="flex items-center gap-3" style={{ color: '#3d5566' }}>
                 <div className="w-9 h-9 rounded flex items-center justify-center flex-shrink-0"
                   style={{ background: 'rgba(0,153,170,0.08)', border: '1px solid rgba(0,153,170,0.15)' }}>
-                  <Building size={15} style={{ color: '#0099aa' }} />
+                  <Phone size={15} style={{ color: '#0099aa' }} />
                 </div>
-                <span className="font-sans text-sm">{contactSection.institution}</span>
+                <span className="font-sans text-sm">{contactSection.contactNo}</span>
               </div>
 
-              <div className="flex items-center gap-3" style={{ color: '#3d5566' }}>
+              {/* <div className="flex items-center gap-3" style={{ color: '#3d5566' }}>
                 <div className="w-9 h-9 rounded flex items-center justify-center flex-shrink-0"
                   style={{ background: 'rgba(0,153,170,0.08)', border: '1px solid rgba(0,153,170,0.15)' }}>
                   <MapPin size={15} style={{ color: '#0099aa' }} />
                 </div>
                 <span className="font-sans text-sm">{contactSection.address}</span>
-              </div>
+              </div> */}
             </div>
 
             {/* Research group member contacts */}

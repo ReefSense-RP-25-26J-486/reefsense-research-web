@@ -5,7 +5,7 @@ export const siteConfig = {
     'An intelligent system combining computer vision, GIS analysis, and deep learning to monitor coral reef health and guide restoration efforts.',
   projectId: 'RP-25-26J-486',
   institution: 'SLIIT — Faculty of Computing',
-  partner: 'Coral Wall Diving & Research Centre, Port City Colombo',
+  // partner: 'Coral Wall Diving & Research Centre, Port City Colombo',
   github: 'https://github.com/your-repo',
   contactEmail: 'reefsense@sliit.lk',
 }
@@ -45,10 +45,12 @@ Active coral restoration programmes do exist across Sri Lanka. Nursery-based cor
   ],
   objectives: [
     'Identify the most ideal locations for coral structure placement to optimize restoration zone area.',
-    'Automate the identification of coral species and monitor& quantify their growth.',
+    'Automate the identification of coral species and monitor & quantify their growth.',
     'Automate Detection and Quantification of Coral Bleaching and provide severe classification.',
     'Calculate & predict temperatures for different depths of water according to surface temperature.',
   ],
+  // Paste your YouTube embed ID here once the video is uploaded (e.g. 'dQw4w9WgXcQ')
+  youtubeId: '',
 }
 
 export const systemOverview = {
@@ -88,6 +90,24 @@ export const systemOverview = {
 export const methodologySection = {
   sectionLabel: '// 03 — METHODOLOGY',
 }
+
+const di = (name) =>
+  `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${name}/${name}-original.svg`
+
+export const technologies = [
+  { name: 'React Native', icon: di('react') },
+  { name: 'Python',       icon: di('python') },
+  { name: 'TensorFlow',   icon: di('tensorflow') },
+  { name: 'Keras',        icon: di('keras') },
+  { name: 'MongoDB',      icon: di('mongodb') },
+  { name: 'Java',         icon: di('java') },
+  { name: 'Spring',       icon: di('spring') },
+  { name: 'Google Maps API', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/google/google-original.svg' },
+  { name: 'Redis',        icon: di('redis') },
+  { name: 'JWT',          icon: 'https://cdn.simpleicons.org/jsonwebtokens/0d1f2d' },
+  { name: 'Google Colab', icon: 'https://cdn.simpleicons.org/googlecolab/F9AB00' },
+  { name: 'Flask',        icon: di('flask') },
+]
 
 export const methodology = [
   {
@@ -285,9 +305,9 @@ export const presentations = [
 export const contactSection = {
   sectionLabel: '// 07 — CONTACT US',
   email: 'reefsense486@gmail.com',
-  // Formspree endpoint — sign up free at formspree.io, create a form for reefsense486@gmail.com,
-  // then replace this with your endpoint e.g. 'https://formspree.io/f/xxxxxxxxxxx'
-  formEndpoint: 'https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID',
+
+  formEndpoint: 'https://formspree.io/f/xjgjyvoj',
+  contactNo: '+94 76 690 2686',
   institution: 'SLIIT — Faculty of Computing',
   address: 'New Kandy Road, Malabe, Sri Lanka',
   members: [

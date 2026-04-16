@@ -1,3 +1,6 @@
+/* Garet font via Fontshare CDN */
+@import url('https://api.fontshare.com/v2/css?f[]=garet@700,800,400&display=swap');
+
 @import "tailwindcss";
 
 @theme {
@@ -5,13 +8,13 @@
   --color-page: #f4f8f8;
   --color-surface: #ffffff;
 
-  /* Teal accent — darkened for contrast on light backgrounds */
+  /* Teal accent */
   --color-teal: #0099aa;
   --color-coral-hot: #e05a3a;
 
-  /* Typography */
+  /* Typography — Garet for display, Inter for body */
   --font-sans: var(--font-inter);
-  --font-display: var(--font-space-grotesk);
+  --font-display: 'Garet', system-ui, sans-serif;
   --font-mono: var(--font-jetbrains-mono);
 }
 
@@ -41,7 +44,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-  font-family: var(--font-space-grotesk), system-ui, sans-serif;
+  font-family: 'Garet', system-ui, sans-serif;
   font-weight: 700;
 }
 

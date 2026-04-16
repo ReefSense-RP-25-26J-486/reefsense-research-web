@@ -1,6 +1,8 @@
+'use client'
+
 import SectionHeading from '@/components/ui/SectionHeading'
 import Tag from '@/components/ui/Tag'
-import { methodology, methodologySection } from '@/content'
+import { methodology, methodologySection, technologies } from '@/content'
 
 function ImagePlaceholder({ filename, alt }) {
   return (
@@ -90,6 +92,42 @@ export default function Methodology() {
                 </div>
               )
             })}
+          </div>
+        </div>
+
+        {/* ── Technologies Used ──────────────────────────── */}
+        <div className="mt-20">
+          <div className="glow-divider mb-12" />
+
+          <p className="font-mono mb-8" style={{ color: '#5a7a8a', fontSize: '10px', letterSpacing: '0.15em' }}>
+            TECHNOLOGIES USED
+          </p>
+
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
+            {technologies.map((tech) => (
+              <div
+                key={tech.name}
+                className="card-hover flex flex-col items-center gap-3 p-4"
+                style={{
+                  background: '#ffffff',
+                  border: '1px solid rgba(0,153,170,0.1)',
+                  borderRadius: '8px',
+                }}
+              >
+                <img
+                  src={tech.icon}
+                  alt={tech.name}
+                  style={{ width: '36px', height: '36px', objectFit: 'contain' }}
+                  onError={(e) => { e.currentTarget.style.display = 'none' }}
+                />
+                <p
+                  className="font-sans text-center leading-tight"
+                  style={{ color: '#3d5566', fontSize: '11px', fontWeight: 400 }}
+                >
+                  {tech.name}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

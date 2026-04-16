@@ -51,7 +51,7 @@ export default function Navbar() {
         {/* Logo */}
         <a href="#" onClick={(e) => handleNavClick(e, '#')} className="flex items-center">
           <img
-            src="/images/logos/ReefSense wide Logo.png"
+            src="/images/logos/ReefSense_text_only.png"
             alt="ReefSense"
             style={{ height: '32px', width: 'auto', objectFit: 'contain' }}
           />
