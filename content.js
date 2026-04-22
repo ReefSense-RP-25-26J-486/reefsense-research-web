@@ -7,7 +7,7 @@ export const siteConfig = {
   institution: 'SLIIT — Faculty of Computing',
   // partner: 'Coral Wall Diving & Research Centre, Port City Colombo',
   github: 'https://github.com/your-repo',
-  contactEmail: 'reefsense@sliit.lk',
+  contactEmail: 'reefsense486@gmail.com',
 }
 
 export const navLinks = [
@@ -95,18 +95,21 @@ const di = (name) =>
   `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${name}/${name}-original.svg`
 
 export const technologies = [
-  { name: 'Python',         icon: di('python') },
-  { name: 'TensorFlow',     icon: di('tensorflow') },
-  { name: 'Keras',          icon: di('keras') },
-  { name: 'OpenCV',         icon: di('opencv') },
-  { name: 'scikit-learn',   icon: di('scikitlearn') },
-  { name: 'NumPy',          icon: di('numpy') },
-  { name: 'Pandas',         icon: di('pandas') },
-  { name: 'QGIS',           icon: 'https://cdn.simpleicons.org/qgis/589632' },
-  { name: 'PostGIS',        icon: di('postgresql') },
-  { name: 'Google Colab',   icon: 'https://cdn.simpleicons.org/googlecolab/F9AB00' },
-  { name: 'Jupyter',        icon: di('jupyter') },
-  { name: 'React Native',   icon: di('react') },
+  { name: 'Python',           icon: di('python') },
+  { name: 'TensorFlow',       icon: di('tensorflow') },
+  { name: 'Keras',            icon: di('keras') },
+  { name: 'OpenCV',           icon: di('opencv') },
+  { name: 'NumPy',            icon: di('numpy') },
+  { name: 'Pandas',           icon: di('pandas') },
+  { name: 'QGIS',             icon: 'https://cdn.simpleicons.org/qgis/589632' },
+  { name: 'PostGIS',          icon: di('postgresql') },
+  { name: 'Google Colab',     icon: 'https://cdn.simpleicons.org/googlecolab/F9AB00' },
+  { name: 'Jupyter',          icon: di('jupyter') },
+  { name: 'React Native',     icon: di('react') },
+  { name: 'Supabase',         icon: di('supabase') },
+  { name: 'Docker',           icon: di('docker') },
+  { name: 'Google Maps API',  icon: di('google') },
+  { name: 'Azure',            icon: di('azure') },
 ]
 
 export const methodology = [
