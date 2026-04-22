@@ -126,7 +126,7 @@ export const methodology = [
     id: 'species',
     title: 'Coral Species Identification & Growth Monitoring',
     contributor: 'Dinithi Wickramaarachchi | IT22227904',
-    imagePath: '/images/methodology-yolo.png',
+    imagePath: '/images/diagrams/species.svg',
     imageAlt: 'Species classification and growth monitoring pipeline',
     description: `EfficientNet-B0, pre-trained on ImageNet and fine-tuned on a labeled coral species dataset, classifies coral species from underwater imagery. Segmentation masks are then applied to quantify colony area change across time-series photographs, providing a measurable growth rate proxy for restoration monitoring.`,
     tools: ['EfficientNet-B0', 'TensorFlow', 'Keras', 'OpenCV'],
@@ -290,7 +290,7 @@ export const documents = [
 export const presentations = [
   {
     label: 'Proposal Presentation',
-    submittedDate: null,
+    submittedDate: '2026/03/01',
     status: 'submitted',
     downloads: [
       { scope: 'Group', url: 'https://canva.link/ge6sqwd8szxgr00' },
@@ -298,7 +298,7 @@ export const presentations = [
   },
   {
     label: 'Progress Presentation I',
-    submittedDate: null,
+    submittedDate: '2026/03/01',
     status: 'submitted',
     downloads: [
       { scope: 'Group', url: 'https://canva.link/swr2ftmaf78d0ef' },
@@ -306,7 +306,7 @@ export const presentations = [
   },
   {
     label: 'Progress Presentation II',
-    submittedDate: null,
+    submittedDate: '2026/03/01',
     status: 'submitted',
     downloads: [
       { scope: 'Group', url: 'https://canva.link/36tmjv32tzgzsid' },
