@@ -135,7 +135,7 @@ export const methodology = [
     id: 'bleaching',
     title: 'Bleaching Detection and Quantification',
     contributor: 'Sahan Kavishka | IT22233530',
-    imagePath: '/images/methodology-bleaching.png',
+    imagePath: '/images/diagrams/bleaching.png',
     imageAlt: 'Bleaching detection output heatmap',
     description: `A color-space analysis pipeline identifies bleached coral regions based on chromatic deviation from healthy coral baselines. The system flags bleached areas within colony masks, computes a per-colony bleaching index, and classifies bleaching severity to support prioritised conservation response.`,
     tools: ['Python', 'OpenCV', 'scikit-learn'],

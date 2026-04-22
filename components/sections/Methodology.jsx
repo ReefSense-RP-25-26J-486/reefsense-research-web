@@ -1,10 +1,11 @@
 'use client'
 
+import { useState } from 'react'
 import SectionHeading from '@/components/ui/SectionHeading'
 import Tag from '@/components/ui/Tag'
 import { methodology, methodologySection, technologies } from '@/content'
 
-function ImagePlaceholder({ filename, alt }) {
+function ImagePlaceholder({ alt }) {
   return (
     <div
       className="w-full overflow-hidden"
@@ -20,9 +21,30 @@ function ImagePlaceholder({ filename, alt }) {
     >
       <p className="font-mono text-center px-4" style={{ color: '#94b5be', fontSize: '11px', lineHeight: 1.8 }}>
         {alt}
-        <br />
-        <span style={{ color: 'rgba(0,153,170,0.4)' }}>/public/images/{filename}</span>
       </p>
+    </div>
+  )
+}
+
+function MethodologyImage({ src, alt }) {
+  const [failed, setFailed] = useState(false)
+  if (failed) return <ImagePlaceholder alt={alt} />
+  return (
+    <div
+      className="w-full overflow-hidden"
+      style={{
+        aspectRatio: '16/9',
+        borderRadius: '6px',
+        border: '1px solid rgba(0,153,170,0.12)',
+        background: '#edf4f5',
+      }}
+    >
+      <img
+        src={src}
+        alt={alt}
+        onError={() => setFailed(true)}
+        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+      />
     </div>
   )
 }
@@ -34,7 +56,6 @@ export default function Methodology() {
         <SectionHeading
           label={methodologySection.sectionLabel}
           title="Methodology"
-          // subtitle="Four AI and GIS components working in concert to address coral reef conservation."
         />
 
         <div className="relative">
@@ -46,7 +67,6 @@ export default function Methodology() {
 
           <div className="flex flex-col gap-16 md:gap-20">
             {methodology.map((item, i) => {
-              const filename = item.imagePath.replace(' ', '')
               const num = String(i + 1).padStart(2, '0')
 
               return (
@@ -71,7 +91,7 @@ export default function Methodology() {
                   {/* Content */}
                   <div className="flex-1 grid md:grid-cols-2 gap-8 lg:gap-12 items-start">
                     <div>
-                      <ImagePlaceholder filename={filename} alt={item.imageAlt} />
+                      <MethodologyImage src={item.imagePath} alt={item.imageAlt} />
                     </div>
                     <div>
                       <p className="font-mono md:hidden mb-2" style={{ color: '#0099aa', fontSize: '11px' }}>{num}</p>
