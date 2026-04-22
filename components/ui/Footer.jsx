@@ -40,7 +40,7 @@ export default function Footer() {
 
           {/* Right — links */}
           <div className="flex gap-6">
-            <a
+            {/* <a
               href={siteConfig.github}
               target="_blank"
               rel="noopener noreferrer"
@@ -51,7 +51,7 @@ export default function Footer() {
             >
               <GitBranch size={14} />
               GitHub
-            </a>
+            </a> */}
             <a
               href={`mailto:${siteConfig.contactEmail}`}
               className="flex items-center gap-2 transition-colors"

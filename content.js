@@ -144,7 +144,7 @@ export const methodology = [
     id: 'forecasting',
     title: 'Thermal Forecasting',
     contributor: 'Gimhani Navodya | IT22208712',
-    imagePath: '/images/methodology-forecast.png',
+    imagePath: '/images/diagrams/temp.png',
     imageAlt: 'CNN-LSTM thermal forecast chart',
     description: `A CNN-LSTM hybrid model processes historical satellite-derived sea surface temperature (SST) time series data to forecast thermal anomalies at the study site. Temperature predictions for varying water depths are calculated from surface readings, and anomaly thresholds trigger proactive early-warning alerts for potential bleaching events.`,
     tools: ['CNN-LSTM', 'TensorFlow', 'NASA EOSDIS', 'Python'],
@@ -246,16 +246,16 @@ export const documents = [
   },
   {
     label: 'Status Documents II',
-    submittedDate: null,
-    status: 'pending',   // link will be updated soon
+    submittedDate: '2026/04/19',
+    status: 'submitted',   // link will be updated soon
     downloads: [
       { scope: 'Individual', url: 'https://drive.google.com/drive/folders/1_T8P9xy-p9aAtfJwzinchyjg1Z9BQ15m?usp=sharing' },
     ],
   },
     {
     label: 'Status Documents III',
-    submittedDate: null,
-    status: 'pending',   // link will be updated soon
+    submittedDate: '2026/04/20',
+    status: 'submitted',  
     downloads: [
       { scope: 'Individual', url: 'https://drive.google.com/drive/folders/1-8y5mR9nVaP4sKTa251oLRdnfmjppWOt?usp=sharing' },
     ],
