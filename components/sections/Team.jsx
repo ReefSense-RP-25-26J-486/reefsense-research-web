@@ -198,7 +198,7 @@ export default function Team() {
   return (
     <section
       id="team"
-      className="py-24 md:py-32 px-6"
+      className="pt-12 md:pt-16 pb-24 md:pb-32 px-6"
       style={{ background: '#f4f8f8' }}
     >
       <div className="max-w-6xl mx-auto">

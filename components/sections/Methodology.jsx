@@ -123,7 +123,7 @@ export default function Methodology() {
             TECHNOLOGIES USED
           </p>
 
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
+          <div className="flex flex-wrap justify-center gap-4">
             {technologies.map((tech) => (
               <div
                 key={tech.name}
@@ -132,6 +132,7 @@ export default function Methodology() {
                   background: '#ffffff',
                   border: '1px solid rgba(0,153,170,0.1)',
                   borderRadius: '8px',
+                  width: '110px',
                 }}
               >
                 <img

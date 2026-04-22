@@ -101,7 +101,7 @@ function ResourceGroup({ title, icon: Icon, items }) {
 
 export default function Resources() {
   return (
-    <section id="resources" className="py-24 md:py-32 px-6" style={{ background: '#f4f8f8' }}>
+    <section id="resources" className="pt-24 md:pt-32 pb-12 md:pb-16 px-6" style={{ background: '#f4f8f8' }}>
       <div className="max-w-6xl mx-auto">
         <SectionHeading
           label={resourcesSection.sectionLabel}
