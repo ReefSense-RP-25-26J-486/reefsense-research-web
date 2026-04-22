@@ -1,7 +1,7 @@
 /* Garet font via Fontshare CDN */
 @import url('https://api.fontshare.com/v2/css?f[]=garet@700,800,400&display=swap');
 
-@import "tailwindcss";
+@import "../node_modules/tailwindcss/index.css";
 
 @theme {
   /* Light palette */
