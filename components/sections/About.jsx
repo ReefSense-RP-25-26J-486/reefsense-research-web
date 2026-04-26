@@ -80,7 +80,7 @@ export default function About() {
           </div>
         </div>
 
-        {/* ── YouTube Video Placeholder ─────────────────── */}
+        {/* ── Project Overview Video — uncomment when ready ──
         <div>
           <h3 className="font-display font-semibold mb-5" style={{ color: '#0d1f2d', fontSize: '1.1rem' }}>
             Project Overview Video
@@ -98,35 +98,9 @@ export default function About() {
                 style={{ width: '100%', height: '100%', border: 'none', display: 'block' }}
               />
             </div>
-          ) : (
-            <div
-              className="w-full flex flex-col items-center justify-center gap-4"
-              style={{
-                aspectRatio: '16/9',
-                maxHeight: '460px',
-                background: '#ffffff',
-                border: '1px dashed rgba(0,153,170,0.25)',
-                borderRadius: '8px',
-              }}
-            >
-              <div
-                className="w-14 h-14 rounded-full flex items-center justify-center"
-                style={{ background: 'rgba(0,153,170,0.08)', border: '1px solid rgba(0,153,170,0.15)' }}
-              >
-                <PlayCircle size={24} style={{ color: '#0099aa' }} />
-              </div>
-              <div className="text-center">
-                <p className="font-display font-semibold mb-1" style={{ color: '#0d1f2d', fontSize: '0.95rem' }}>
-                  Video coming soon
-                </p>
-                <p className="font-sans" style={{ color: '#5a7a8a', fontSize: '0.85rem' }}>
-                  Set <code className="font-mono" style={{ color: '#0099aa', fontSize: '0.8rem' }}>youtubeId</code> in{' '}
-                  <code className="font-mono" style={{ color: '#0099aa', fontSize: '0.8rem' }}>content.js</code> once uploaded
-                </p>
-              </div>
-            </div>
-          )}
+          ) : null}
         </div>
+        ── */}
       </div>
     </section>
   )

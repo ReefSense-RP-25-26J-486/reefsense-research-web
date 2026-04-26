@@ -1,53 +1,8 @@
 'use client'
 
-import { useState } from 'react'
 import SectionHeading from '@/components/ui/SectionHeading'
 import Tag from '@/components/ui/Tag'
 import { methodology, methodologySection, technologies } from '@/content'
-
-function ImagePlaceholder({ alt }) {
-  return (
-    <div
-      className="w-full overflow-hidden"
-      style={{
-        aspectRatio: '16/9',
-        background: '#edf4f5',
-        border: '1px solid rgba(0,153,170,0.12)',
-        borderRadius: '6px',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
-    >
-      <p className="font-mono text-center px-4" style={{ color: '#94b5be', fontSize: '11px', lineHeight: 1.8 }}>
-        {alt}
-      </p>
-    </div>
-  )
-}
-
-function MethodologyImage({ src, alt }) {
-  const [failed, setFailed] = useState(false)
-  if (failed) return <ImagePlaceholder alt={alt} />
-  return (
-    <div
-      className="w-full overflow-hidden"
-      style={{
-        aspectRatio: '16/9',
-        borderRadius: '6px',
-        border: '1px solid rgba(0,153,170,0.12)',
-        background: '#edf4f5',
-      }}
-    >
-      <img
-        src={src}
-        alt={alt}
-        onError={() => setFailed(true)}
-        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-      />
-    </div>
-  )
-}
 
 export default function Methodology() {
   return (
@@ -65,7 +20,7 @@ export default function Methodology() {
             style={{ background: 'rgba(0,153,170,0.2)' }}
           />
 
-          <div className="flex flex-col gap-16 md:gap-20">
+          <div className="flex flex-col gap-12 md:gap-16">
             {methodology.map((item, i) => {
               const num = String(i + 1).padStart(2, '0')
 
@@ -88,25 +43,20 @@ export default function Methodology() {
                     </div>
                   </div>
 
-                  {/* Content */}
-                  <div className="flex-1 grid md:grid-cols-2 gap-8 lg:gap-12 items-start">
-                    <div>
-                      <MethodologyImage src={item.imagePath} alt={item.imageAlt} />
-                    </div>
-                    <div>
-                      <p className="font-mono md:hidden mb-2" style={{ color: '#0099aa', fontSize: '11px' }}>{num}</p>
-                      <h3 className="font-display font-semibold mb-1.5 leading-snug" style={{ color: '#0d1f2d', fontSize: '1.2rem' }}>
-                        {item.title}
-                      </h3>
-                      <p className="font-mono mb-5" style={{ color: 'rgba(0,153,170,0.7)', fontSize: '11px' }}>
-                        {item.contributor}
-                      </p>
-                      <p className="font-sans mb-6 leading-relaxed" style={{ color: '#3d5566', fontSize: '0.95rem', lineHeight: 1.8, fontWeight: 300 }}>
-                        {item.description}
-                      </p>
-                      <div className="flex flex-wrap gap-2">
-                        {item.tools.map((tool) => <Tag key={tool} label={tool} />)}
-                      </div>
+                  {/* Content — text only */}
+                  <div className="flex-1 max-w-3xl">
+                    <p className="font-mono md:hidden mb-2" style={{ color: '#0099aa', fontSize: '11px' }}>{num}</p>
+                    <h3 className="font-display font-semibold mb-1.5 leading-snug" style={{ color: '#0d1f2d', fontSize: '1.2rem' }}>
+                      {item.title}
+                    </h3>
+                    <p className="font-mono mb-5" style={{ color: 'rgba(0,153,170,0.7)', fontSize: '11px' }}>
+                      {item.contributor}
+                    </p>
+                    <p className="font-sans mb-6 leading-relaxed" style={{ color: '#3d5566', fontSize: '0.95rem', lineHeight: 1.8, fontWeight: 300 }}>
+                      {item.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {item.tools.map((tool) => <Tag key={tool} label={tool} />)}
                     </div>
                   </div>
                 </div>
