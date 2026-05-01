@@ -176,7 +176,9 @@ function MemberCard({ member }) {
         )}
         {member.email && (
           <a
-            href={`mailto:${member.email}`}
+            href={`https://mail.google.com/mail/?view=cm&fs=1&to=${member.email}`}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 transition-colors"
             style={{ color: '#94b5be', fontSize: '12px' }}
             onMouseOver={(e) => (e.currentTarget.style.color = '#0099aa')}

@@ -77,7 +77,9 @@ export default function ContactUs() {
 
             <div className="flex flex-col gap-4 mb-8">
               <a
-                href={`mailto:${contactSection.email}`}
+                href={`https://mail.google.com/mail/?view=cm&fs=1&to=${contactSection.email}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-3 transition-colors"
                 style={{ color: '#3d5566' }}
                 onMouseOver={(e) => (e.currentTarget.style.color = '#0099aa')}
@@ -122,7 +124,9 @@ export default function ContactUs() {
                     {m.name}
                   </p>
                   <a
-                    href={`mailto:${m.email}`}
+                    href={`https://mail.google.com/mail/?view=cm&fs=1&to=${m.email}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="font-mono inline-flex items-center gap-1.5 transition-colors"
                     style={{ color: '#5a7a8a', fontSize: '11px' }}
                     onMouseOver={(e) => (e.currentTarget.style.color = '#0099aa')}
